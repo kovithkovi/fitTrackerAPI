@@ -46,7 +46,7 @@ export const getWorkoutsByDate = async (req: Request, res: Response): Promise<vo
 
     if (workouts.length === 0) {
       res.status(404).json({ message: `No workouts found on ${formattedDate}` });
-      return; // ✅ Stop further execution
+      return;
     }
 
     res.status(200).json(workouts);
