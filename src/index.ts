@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db'; // ✅ fixed here
 import workoutRoutes from './routes/workoutRoutes';
 import foodRoutes from './routes/foodRoutes';
+import weightRoutes from './routes/weightRoutes';
 dotenv.config();
 connectDB();
 
@@ -14,7 +15,8 @@ app.use(cors());
 app.use(express.json()); 
 
 app.use('/api/workouts', workoutRoutes);
-app.use('/api/food', foodRoutes)
+app.use('/api/food', foodRoutes);
+app.use('/api/weight', weightRoutes);
 
 app.get('/', (_req, res) => {
   res.send('Fit Tracker Backend is Running 🏋️‍♂️');

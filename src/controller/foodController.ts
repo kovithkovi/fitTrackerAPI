@@ -30,9 +30,9 @@ export const getFoodsByDate = async (req: Request, res: Response): Promise<void>
 
     if (foods.length === 0) {
       res.status(404).json({ message: `No food records found for ${date}` });
-      return; // ✅ End execution early
+      return; 
     }
-
+    
     res.status(200).json(foods);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch food by date', error });
