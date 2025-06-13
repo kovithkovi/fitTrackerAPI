@@ -20,7 +20,7 @@ export const addWeight = async (req: Request, res: Response) => {
 // 📥 Get all workouts
 export const getAllWeights = async (_req: Request, res: Response) => {
   try {
-    const workouts = await Weight.find().sort({ date: -1 }); // newest first
+    const workouts = await Weight.find().sort({ date: 1 }).limit(10);
     res.status(200).json(workouts);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch workouts', error });
